@@ -3,6 +3,61 @@ import 'package:flutter/material.dart';
 class BasicView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: NetworkImage(
+              "https://resources.ninghao.org/images/space-skull.jpg"),
+          alignment: Alignment.topCenter,
+          fit: BoxFit.cover,
+          colorFilter: ColorFilter.mode(
+             Colors.indigoAccent[400].withOpacity(1.0),
+            BlendMode.hardLight
+          )
+        ),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            child: Icon(Icons.pool, size: 40.0, color: Colors.white),
+            padding: EdgeInsets.all(16.0),
+            margin: EdgeInsets.all(8.0),
+            width: 90.0,
+            height: 90.0,
+            decoration: BoxDecoration(
+                color: Color.fromRGBO(3, 54, 255, 1.0),
+                border: Border.all(
+                    color: Colors.red, width: 3.0, style: BorderStyle.solid),
+                //borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                boxShadow: [
+                  BoxShadow(
+                      offset: Offset(5.0, 10.0),
+                      blurRadius: 25.0,
+                      color: Color.fromRGBO(16, 20, 188, 1.0),
+                      spreadRadius: -6.0)
+                ],
+                shape: BoxShape.circle,
+//                gradient: RadialGradient(
+//                  colors: [
+//                     Color.fromRGBO(16, 20, 188, 1.0),
+//                    Color.fromRGBO(46, 202, 188, 1.0),
+//                  ]
+//                ),
+                gradient: LinearGradient(colors: [
+                  Color.fromRGBO(16, 20, 188, 1.0),
+                  Color.fromRGBO(46, 202, 188, 1.0)
+                ], begin: Alignment.topLeft, end: Alignment.bottomLeft)),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class RichTextView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
         text: "王者荣耀",
