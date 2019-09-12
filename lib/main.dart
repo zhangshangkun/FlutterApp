@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'view/listviews.dart';
+import 'view/listv_iews.dart';
 import 'view/drawer_left.dart';
 import 'view/bottom_navigation_bar.dart';
 import 'view/basic_view.dart';
@@ -7,6 +7,8 @@ import 'view/layout_view.dart';
 import 'view/view_demo.dart';
 import 'view/grid_view.dart';
 import 'view/sliver_view.dart';
+import 'view/navigation_view.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -14,7 +16,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      //home: NavigationView() ,
+      initialRoute: "/",
+      routes: {
+        "/":(context)=>Home(),
+        "/about":(context)=>Page(title: "落岑",)
+      },
       theme: ThemeData(
           primarySwatch: Colors.yellow,
           highlightColor: Color.fromRGBO(255,255, 255, 0.5),
